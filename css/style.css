@@ -1,0 +1,95 @@
+#mainContainer {
+	margin: 0 auto;
+	padding: 40px 15px;
+	max-width: 960px;
+}
+
+.intro, .introSmall {
+	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+}
+
+.intro {
+	font-size: 22px;
+	font-weight: 300;
+	line-height: 1.4;
+	text-transform: uppercase;
+}
+
+.introSmall {
+	font-size: 18px;
+	font-weight: 100;
+	color: #00AAAE;
+	line-height: 1.2;
+}
+
+.wrapBoxContent {
+	margin: 40px 0;
+}
+
+.cssCollapse-hiddenContent {
+	background-color: #FFCC00;
+	overflow-y: hidden;
+	max-height: 0px;
+	-webkit-transition: cubic-bezier(0.17, 0.04, 0.03, 0.94) 400ms max-height;
+	-moz-transition: cubic-bezier(0.17, 0.04, 0.03, 0.94) 400ms max-height;
+	-ms-transition: cubic-bezier(0.17, 0.04, 0.03, 0.94) 400ms max-height;
+	-o-transition: cubic-bezier(0.17, 0.04, 0.03, 0.94) 400ms max-height;
+	transition: cubic-bezier(0.17, 0.04, 0.03, 0.94) 400ms max-height;
+}
+
+.cssCollapse-hiddenContent.is-open {
+	max-height: 5000px;
+}
+
+.innerText {
+	line-height: 1.2;
+	padding: 15px;
+}
+
+.button {
+	display: block;
+	background-color: #FF6600;
+	border: 1px solid #FF6600;
+	font-size: 1em;
+	font-weight: 500;
+	color: #ffffff;
+	clear: both;
+	cursor: pointer;
+	outline: none;
+	padding: 1em;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+
+.icons {
+	font-family: "rich-icons";
+	src: url("../fonts/rich-icons.eot");
+	src: url("../fonts/rich-icons.eot?#iefix") format("embedded-opentype"),
+		url("../fonts/rich-icons.woff") format("woff"),
+		url("../fonts/rich-icons.ttf") format("truetype"),
+		url("../fonts/rich-icons.svg#rich-icons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-add:before {
+	content: "'";
+}
+
+.icon-add-fill:before {
+	content: "%";
+}
+
+.icon-minus:before {
+	content: "(";
+}
+
+.icon-minus-fill:before {
+	content: "&";
+}
