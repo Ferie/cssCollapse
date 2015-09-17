@@ -14,7 +14,7 @@
 			iconOpen: 'icon-add',
 			iconClose: 'icon-minus-fill',
 			behaviour: '',
-			speed: '1000ms',
+			speed: '',
 			delay: ''
 		};
 

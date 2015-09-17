@@ -43,11 +43,11 @@
 .cssCollapse-hiddenContent {
 	overflow-y: hidden;
 	max-height: 0px;
-	-webkit-transition: ease-in-out 400ms max-height;
-	-moz-transition: ease-in-out 400ms max-height;
-	-ms-transition: ease-in-out 400ms max-height;
-	-o-transition: ease-in-out 400ms max-height;
-	transition: ease-in-out 400ms max-height;
+	-webkit-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+	-moz-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+	-ms-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+	-o-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+	transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
 }
 
 .cssCollapse-hiddenContent.is-open {
