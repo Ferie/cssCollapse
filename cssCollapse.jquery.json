@@ -31,7 +31,6 @@
     "docs": "https://github.com/Ferie/cssCollapse#readme",
     "download": "https://github.com/Ferie/cssCollapse/archive/master.zip",
     "dependencies": {
-        "jquery": ">=1.4",
-        "mustache.js": ">=v2.0.0"
+        "jquery": ">=1.4"
     }
 }
