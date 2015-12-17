@@ -52,20 +52,26 @@
 				$collapseIcons = $currentTarget.find('.' + pluginThis.options.prefix + pluginThis.options.iconClass),
 				$hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass),
 				$currentParent = $currentTarget.parents('.' + pluginThis.options.accordionContainer),
-				$accordionCollapseIcons = $currentParent.find('.' + pluginThis.options.prefix + pluginThis.options.targetClass + ' > .' + pluginThis.options.prefix + pluginThis.options.iconClass),
+				$accordionTargets = $currentParent.find('.' + pluginThis.options.targetSelected),
+                $accordionCollapseIcons = $currentParent.find('.' + pluginThis.options.prefix + pluginThis.options.targetClass + ' .' + pluginThis.options.prefix + pluginThis.options.iconClass),
 				$accordionHiddenContent = $currentParent.find('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
-			if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
-				$hiddenContent.removeClass(pluginThis.options.collapseClass);
-				$collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconClose).addClass(pluginThis.options.prefix + pluginThis.options.iconOpen);
-				$(document).trigger(pluginThis._name + '.accordionClose');
-			} else {
-				$accordionHiddenContent.removeClass(pluginThis.options.collapseClass);
-				$accordionCollapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconClose);
-				$hiddenContent.addClass(pluginThis.options.collapseClass);
-				$collapseIcons.addClass(pluginThis.options.prefix + pluginThis.options.iconClose);
-				$(document).trigger(pluginThis._name + '.accordionOpen');
-			}
+            if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
+                // target opened
+                $currentTarget.removeClass(pluginThis.options.targetSelected);
+                $hiddenContent.removeClass(pluginThis.options.collapseClass);
+                $collapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
+                $(document).trigger(pluginThis._name + '.accordionClose');
+            } else {
+                // target closed
+                $accordionTargets.removeClass(pluginThis.options.targetSelected);
+                $accordionHiddenContent.removeClass(pluginThis.options.collapseClass);
+                $accordionCollapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
+                $currentTarget.addClass(pluginThis.options.targetSelected);
+                $hiddenContent.addClass(pluginThis.options.collapseClass);
+                $collapseIcons.removeClass(pluginThis.options.iconClose).addClass(pluginThis.options.iconOpen);
+                $(document).trigger(pluginThis._name + '.accordionOpen');
+            }
 		},
 		checkAccordion: function (event) {
 			var pluginThis = event.data.pluginThis,
