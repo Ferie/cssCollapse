@@ -35,31 +35,31 @@
 /********** CSS COLLAPSE **********/
 
 .cssCollapse-hiddenContent {
-	overflow-y: hidden;
-	max-height: 0px;
-	-webkit-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
-	-moz-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
-	-ms-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
-	-o-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
-	transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+    overflow-y: hidden;
+    max-height: 0px;
+    -webkit-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+    -moz-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+    -ms-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+    -o-transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
+    transition: cubic-bezier(.08,.99,.46,.73) 400ms max-height;
 }
 
 .cssCollapse-hiddenContent.is-open {
     -webkit-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
-	-moz-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
-	-ms-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
-	-o-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
-	transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+    -moz-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+    -ms-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+    -o-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+    transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
 }
 
 /*** MEDIA QUERY FOR THE HIDDEN CONTENT ***/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    
+
 }
 
 @media only screen and (min-width: 320px) {
-    
+
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
@@ -69,7 +69,7 @@
 }
 
 @media only screen and (min-width: 481px) {
-    
+
 }
 
 @media only screen and (min-width: 481px) and (max-width: 568px) {
@@ -79,7 +79,7 @@
 }
 
 @media only screen and (min-width: 569px) {
-    
+
 }
 
 @media only screen and (min-width: 569px) and (max-width: 768px){
@@ -111,7 +111,7 @@
 
 .accordionContent {
     border-top: 1px solid #dddddd;
-	padding: 10px 20px;
+    padding: 10px 20px;
 }
 
 .accordionContent:first-child {
@@ -126,28 +126,28 @@
     overflow-y: hidden;
     max-height: 0px;
     -webkit-transition: ease-in-out 600ms max-height;
-	-moz-transition: ease-in-out 600ms max-height;
-	-ms-transition: ease-in-out 600ms max-height;
-	-o-transition: ease-in-out 600ms max-height;
-	transition: ease-in-out 600ms max-height;
+    -moz-transition: ease-in-out 600ms max-height;
+    -ms-transition: ease-in-out 600ms max-height;
+    -o-transition: ease-in-out 600ms max-height;
+    transition: ease-in-out 600ms max-height;
 }
 
 .accordion-hiddenContent.is-open {
     -webkit-transition: ease-in-out 600ms max-height;
-	-moz-transition: ease-in-out 600ms max-height;
-	-ms-transition: ease-in-out 600ms max-height;
-	-o-transition: ease-in-out 600ms max-height;
-	transition: ease-in-out 600ms max-height;
+    -moz-transition: ease-in-out 600ms max-height;
+    -ms-transition: ease-in-out 600ms max-height;
+    -o-transition: ease-in-out 600ms max-height;
+    transition: ease-in-out 600ms max-height;
 }
 
 /*** MEDIA QUERY FOR THE HIDDEN CONTENT ***/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    
+
 }
 
 @media only screen and (min-width: 320px) {
-    
+
 }
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
@@ -157,7 +157,7 @@
 }
 
 @media only screen and (min-width: 481px) {
-    
+
 }
 
 @media only screen and (min-width: 481px) and (max-width: 568px) {
@@ -167,7 +167,7 @@
 }
 
 @media only screen and (min-width: 569px) {
-    
+
 }
 
 @media only screen and (min-width: 569px) and (max-width: 768px){
