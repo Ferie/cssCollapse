@@ -9,7 +9,7 @@
         "collapse boxes",
         "accordion"
     ],
-    "version": "1.0",
+    "version": "2.0",
     "author": {
         "name": "Riccardo Andreatta",
         "url": "https://github.com/Ferie/cssCollapse"
