@@ -8,6 +8,7 @@
             accordionContainer: 'accordionContainer',
             prefix: 'cssCollapse-',
             targetClass: 'target',
+            targetSelected: 'selected',
             hiddenContentClass: 'hiddenContent',
             collapseClass: 'is-open',
             iconClass: 'collapseIcons',
@@ -68,7 +69,7 @@
             if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
                 // target opened
                 $hiddenContent.removeClass(pluginThis.options.collapseClass);
-                if (!pluginThis.options.iconOpen == '') {
+                if (pluginThis.options.iconOpen != '') {
                     $collapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
                 }
                 $currentTarget.removeClass(pluginThis.options.targetSelected);
@@ -80,12 +81,12 @@
                 // target closed
                 $accordionTargets.removeClass(pluginThis.options.targetSelected);
                 $accordionHiddenContent.removeClass(pluginThis.options.collapseClass);
-                if (!pluginThis.options.iconOpen == '') {
+                if (pluginThis.options.iconOpen != '') {
                     $accordionCollapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
                 }
                 $currentTarget.addClass(pluginThis.options.targetSelected);
                 $hiddenContent.addClass(pluginThis.options.collapseClass);
-                if (!pluginThis.options.iconOpen == '') {
+                if (pluginThis.options.iconOpen != '') {
                     $collapseIcons.removeClass(pluginThis.options.iconClose).addClass(pluginThis.options.iconOpen);
                 }
                 if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
@@ -147,7 +148,7 @@
 
             $targetSelected.removeClass(pluginThis.options.targetSelected);
             $hiddenContent.removeClass(pluginThis.options.collapseClass);
-            if (!pluginThis.options.iconOpen == '') {
+            if (pluginThis.options.iconOpen != '') {
                 $collapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
             }
             if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {

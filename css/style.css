@@ -111,19 +111,19 @@
 
 .accordionContent {
     border-top: 1px solid #dddddd;
-    padding: 10px 20px;
 }
 
 .accordionContent:first-child {
     border: none;
 }
 
-.accordionContainer .cssCollapse-collapseIcons {
-    float: right;
+.accordion-target {
+    padding: 10px 20px;
 }
 
 .accordion-hiddenContent {
     overflow-y: hidden;
+    padding: 0 20px;
     max-height: 0px;
     -webkit-transition: ease-in-out 600ms max-height;
     -moz-transition: ease-in-out 600ms max-height;
