@@ -1,4 +1,4 @@
-# cssCollapse a simple jQuery plugin that collapse elements of content using CSS3 transitions
+# cssCollapse a simple jQuery plugin that collapses elements of content using CSS3 transitions
 
 See the [cssCollapse jQuery plugin](http://riccardoandreatta.com/web-app/cssCollapse/example.html) in actions!!!
 
@@ -6,7 +6,7 @@ This plugin was developed to slide the content of a hidden box using the CSS3 tr
 It works with the following parameters that can be overwritten if needed.
 
 * ```accordion```: this variable set if the collapse has to behave like an accordion or not (the default is 'no', this means that if you want the accordion behaviour, you have to call the plugin with the varible inside it set to 'yes')
-* * ```accordionContainer```: this variable is the class that tells the plugin the container class for the accordion (the default is 'accordionContainer')
+* ```accordionContainer```: this variable is the class that tells the plugin the container class for the accordion (the default is 'accordionContainer')
 * ```prefix```: this is the prefix that you can use for all the classes of this plugin to distinguish the istances or the libraries or other plugins that you are using that in some cases can use the same class names (the default is 'cssCollapse-')
 * ```targetClass```: this is the target class where the click perform the action. The target can be a link or a button or a box (the default is 'target')
 * ```targetSelected```: this is the class that is put to the open accordion target (the default is 'selected')
@@ -18,6 +18,8 @@ It works with the following parameters that can be overwritten if needed.
 * ```behaviour```: this is the CSS3 transitions name that you want to use (the default is empty to let the css rules works itself)
 * ```speed```: this is the transitions speed that you want to use (the default is empty to let the css rules works itself)
 * ```delay```: this is the CSS3 transitions delay that you want to use (the default is empty to let the css rules works itself)
+* ```accordionCloseLinkClass```: this is the the class for the closing link inside the accordion, if needed (the default is 'closeAccordion')
+* ```noScrollClass```: this is the the class that you have to use in your html near the target class, if you don't want to scroll the page when the target is clicked (the default class name is 'noScroll')
 
 #### IMPORTANT NOTES
 
