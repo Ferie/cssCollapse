@@ -1,44 +1,38 @@
-#mainContainer {
-	margin: 0 auto;
-	padding: 40px 15px;
-	max-width: 960px;
+/********** CUSTOM CSS **********/
+
+.example1, .example2, .example3, .example4 {
+    padding: 32px 0;
 }
 
-/* HEADING CLASSES */
-
-.heading1 {
-    display: block;
-    font-family: "Roboto", "Helvetica Neue", "Helvetica", sans-serif;
-    font-size: 32px;
-    font-weight: 300;
-    color: #222222;
-    line-height: 1.3;
-    margin: 16px 0;
+.example2 .cssCollapse-target {
+    display: table;
 }
 
-.intro, .introSmall {
-	font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+.example2 .cssCollapse-collapseIcons {
+    display: table-cell;
+    vertical-align: middle;
 }
 
-.intro {
-	font-size: 22px;
-	font-weight: 300;
-	line-height: 1.4;
-	margin: 20px 0;
-	text-transform: uppercase;
+.example2 .cssCollapse-text {
+    display: table-cell;
+    padding-left: 6px;
+    vertical-align: inherit;
 }
 
-.introSmall {
-	font-size: 18px;
-	font-weight: 100;
-	color: #00AAAE;
-	line-height: 1.2;
-	margin: 20px 0;
+.wrapBoxContent .button.inline {
+    width: 40%;
 }
 
-.wrapBoxContent {
-	margin: 40px 0;
+/********** PREVENT PERMANENT HIGHLIGHT ON MOBILE **********/
+
+.cssCollapse-target,
+.cssCollapse-collapseIcons,
+.accordion-target,
+.accordion-icons {
+    -webkit-tap-highlight-color: $transparent;
 }
+
+/********** CSS COLLAPSE **********/
 
 .cssCollapse-hiddenContent {
 	overflow-y: hidden;
@@ -51,69 +45,65 @@
 }
 
 .cssCollapse-hiddenContent.is-open {
-	max-height: 2500px;
+    -webkit-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+	-moz-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+	-ms-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+	-o-transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
+	transition: cubic-bezier(.08,.99,.46,.73) 600ms max-height;
 }
 
-.boxHidden {
-	background-color: #FFCC00;
+/*** MEDIA QUERY FOR THE HIDDEN CONTENT ***/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    
 }
 
-.linkTextHidden {
-	
+@media only screen and (min-width: 320px) {
+    
 }
 
-.innerText {
-	line-height: 1.2;
-	padding: 15px;
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1900px;
+    }
 }
 
-.linkTextHidden > .innerText {
-	padding: 15px 0;
+@media only screen and (min-width: 481px) {
+    
 }
 
-.button {
-	display: block;
-	background-color: #FF6600;
-	border: 1px solid #FF6600;
-	font-size: 1em;
-	font-weight: 500;
-	color: #ffffff;
-	clear: both;
-	cursor: pointer;
-	outline: none;
-	padding: 1em;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1100px;
+    }
 }
 
-.button:hover {
-	opacity: 0.8;
-	filter: alpha(opacity=80);
+@media only screen and (min-width: 569px) {
+    
 }
 
-/* LINKS CLASSES */
-
-.link {
-    cursor: pointer;
-    color: #FF6600;
-	vertical-align: top;
+@media only screen and (min-width: 569px) and (max-width: 768px){
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1000px;
+    }
 }
 
-.link:hover {
-    text-decoration: none;
+@media only screen and (min-width: 769px) {
 }
 
-.link.alternative {
-    color: #dddddd;
-    text-decoration: none;
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 700px;
+    }
 }
 
-.link.alternative:hover {
-    text-decoration: underline;
+@media only screen and (min-width: 1025px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 500px;
+    }
 }
 
-/* ACCORDION */
+/********** ACCORDION **********/
 
 .accordionContainer {
     border: 1px solid #dddddd;
@@ -132,55 +122,71 @@
     float: right;
 }
 
-/* ICONS */
-/* ICON FONTS */
-
-@font-face {
-	font-family: "gbes-icons";
-	src: url("../fonts/gbes-icons.eot");
-    src: url("../fonts/gbes-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/gbes-icons.woff") format("woff"), url("../fonts/gbes-icons.ttf") format("truetype"), url("../fonts/gbes-icons.svg#gbes-icons") format("svg");
-    font-weight: normal;
-	font-style: normal;
+.accordion-hiddenContent {
+    overflow-y: hidden;
+    max-height: 0px;
+    -webkit-transition: ease-in-out 600ms max-height;
+	-moz-transition: ease-in-out 600ms max-height;
+	-ms-transition: ease-in-out 600ms max-height;
+	-o-transition: ease-in-out 600ms max-height;
+	transition: ease-in-out 600ms max-height;
 }
 
-[data-icon]:before {
-    font-family: "gbes-icons" !important;
-    content: attr(data-icon);
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+.accordion-hiddenContent.is-open {
+    -webkit-transition: ease-in-out 600ms max-height;
+	-moz-transition: ease-in-out 600ms max-height;
+	-ms-transition: ease-in-out 600ms max-height;
+	-o-transition: ease-in-out 600ms max-height;
+	transition: ease-in-out 600ms max-height;
 }
 
-[class^="cssCollapse-icon-"]:before,
-[class*=" cssCollapse-icon-"]:before {
-    font-family: "gbes-icons" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/*** MEDIA QUERY FOR THE HIDDEN CONTENT ***/
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    
 }
 
-.cssCollapse-icon-add:before {
-	content: "'";
+@media only screen and (min-width: 320px) {
+    
 }
 
-.cssCollapse-icon-add-fill:before {
-	content: "%";
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .accordion-hiddenContent.is-open {
+        max-height: 1900px;
+    }
 }
 
-.cssCollapse-icon-minus:before {
-	content: "(";
+@media only screen and (min-width: 481px) {
+    
 }
 
-.cssCollapse-icon-minus-fill:before {
-	content: "&";
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+    .accordion-hiddenContent.is-open {
+        max-height: 1100px;
+    }
+}
+
+@media only screen and (min-width: 569px) {
+    
+}
+
+@media only screen and (min-width: 569px) and (max-width: 768px){
+    .accordion-hiddenContent.is-open {
+        max-height: 1000px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .accordion-hiddenContent.is-open {
+        max-height: 700px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .accordion-hiddenContent.is-open {
+        max-height: 500px;
+    }
 }
