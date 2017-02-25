@@ -181,6 +181,4 @@
     $.fn[pluginName].defaults = defaults;
     $.fn[pluginName].constructor = plugin;
 
-    $(document).cssCollapse();
-
 })(jQuery, window, document);
