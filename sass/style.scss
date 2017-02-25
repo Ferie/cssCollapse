@@ -14,6 +14,9 @@ $line-height: 1.2;
 // Mixins
 @import "modules/mixins";
 
+// JS Plugins Styles
+@import "js-plugins/cssCollapse";
+
 // Page setting
 @import "partials/body-settings";
 @import "partials/headers";
