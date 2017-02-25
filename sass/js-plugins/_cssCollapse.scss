@@ -1,5 +1,14 @@
 @import "cssCollapse-media-queries";
 
+/********** PREVENT PERMANENT HIGHLIGHT ON MOBILE **********/
+
+.cssCollapse-target,
+.cssCollapse-collapseIcons,
+.accordion-target,
+.accordion-collapseIcons {
+    -webkit-tap-highlight-color: $transparent;
+}
+
 /********** CSS COLLAPSE **********/
 
 .cssCollapse-hiddenContent {
@@ -30,7 +39,7 @@
     padding: 10px 20px;
 }
 
-.accordion-icons {
+.accordion-collapseIcons {
     float: right;
 }
 

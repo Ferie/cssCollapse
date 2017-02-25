@@ -1,3 +1,11 @@
+@function em($target, $context: $base-font) {
+	@return ($target / $context) * 1em;
+}
+
+@function rem($target, $context: $base-font) {
+	@return ($target / $context) * 1rem;
+}
+
 @mixin transition($transition-property, $transition-time, $method) {
     -webkit-transition: $transition-property $transition-time $method;
     -moz-transition: $transition-property $transition-time $method;
@@ -11,14 +19,6 @@
 	-moz-transform: $transform-property;
 	-ms-transform: $transform-property;
 	-o-transform: $transform-property;
-}
-
-@function em($target, $context: $base-font) {
-	@return ($target / $context) * 1em;
-}
-
-@function rem($target, $context: $base-font) {
-	@return ($target / $context) * 1rem;
 }
 
 @mixin box-sizing($type: border-box) {

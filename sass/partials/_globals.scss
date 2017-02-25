@@ -17,12 +17,3 @@
     line-height: 1.2;
     margin: 20px 0;
 }
-
-/********** PREVENT PERMANENT HIGHLIGHT ON MOBILE **********/
-
-.cssCollapse-target,
-.cssCollapse-collapseIcons,
-.accordion-target,
-.accordion-icons {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
