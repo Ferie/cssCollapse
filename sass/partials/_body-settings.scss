@@ -1,0 +1,15 @@
+body {
+    font-family: $font;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+.container {
+    display: block;
+    margin: 20px auto;
+    max-width: 1024px;
+}
+
+.wrapper {
+    margin: 0 16px;
+}

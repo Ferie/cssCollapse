@@ -1,0 +1,26 @@
+// Buttons
+
+.button {
+    @include transition(ease, 500ms, background-color);
+    display: block;
+    background-color: $orange;
+    border: 1px solid $orange;
+    border: 0;
+    font-size: 1em;
+    color: $white;
+    cursor: pointer;
+    outline: none;
+    padding: 1em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-tap-highlight-color: $transparent;
+
+    &:hover {
+        background-color: scale-color($terquoise, $lightness: 5%);
+    }
+
+    &:active {
+        background-color: scale-color($terquoise, $lightness: -5%);
+    }
+}

@@ -1,0 +1,19 @@
+// Links
+
+.link {
+    cursor: pointer;
+    color: #FF6600;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &.alternative {
+        color: #dddddd;
+        text-decoration: none;
+    }
+
+    &.alternative:hover {
+        text-decoration: underline;
+    }
+}
