@@ -57,7 +57,7 @@ In particular the classes that have to be present in the CSS are ```.hiddenConte
     transition: ease-in-out 600ms max-height;
 }
 
-.accordion-hiddenContent.is-open {
+.hiddenContent.is-open {
     -webkit-transition: ease-in-out 600ms max-height;
     -moz-transition: ease-in-out 600ms max-height;
     -ms-transition: ease-in-out 600ms max-height;
