@@ -2,14 +2,14 @@
 
 .link {
     cursor: pointer;
-    color: #FF6600;
+    color: $orange;
 
     &:hover {
         text-decoration: none;
     }
 
     &.alternative {
-        color: #dddddd;
+        color: $greyDdd;
         text-decoration: none;
     }
 
