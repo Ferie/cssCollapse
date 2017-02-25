@@ -1,12 +1,46 @@
-.boxHidden {
-    background-color: #FFCC00;
+@import "cssCollapse-media-queries";
+
+/********** CSS COLLAPSE **********/
+
+.cssCollapse-hiddenContent {
+    @include transition(cubic-bezier(.08,.99,.46,.73), 400ms, max-height);
+    overflow-y: hidden;
+    max-height: 0px;
+
+    &.is-open {
+        @include transition(cubic-bezier(.08,.99,.46,.73), 600ms, max-height);
+    }
 }
 
-.innerText {
-    line-height: 1.2;
-    padding: 16px;
+/********** ACCORDION **********/
+
+.accordionContainer {
+    border: 1px solid $greyDdd;
 }
 
-.linkTextHidden > .innerText {
-    padding: 16px 0;
+.accordionContent {
+    border-top: 1px solid $greyDdd;
+
+    &:first-child {
+        border: none;
+    }
+}
+
+.accordion-target {
+    padding: 10px 20px;
+}
+
+.accordion-icons {
+    float: right;
+}
+
+.accordion-hiddenContent {
+    @include transition(ease-in-out, 600ms, max-height);
+    overflow-y: hidden;
+    padding: 0 20px;
+    max-height: 0px;
+}
+
+.accordion-hiddenContent.is-open {
+    @include transition(ease-in-out, 600ms, max-height);
 }

@@ -13,6 +13,24 @@
 	-o-transform: $transform-property;
 }
 
+@function em($target, $context: $base-font) {
+	@return ($target / $context) * 1em;
+}
+
+@function rem($target, $context: $base-font) {
+	@return ($target / $context) * 1rem;
+}
+
+@mixin box-sizing($type: border-box) {
+	-moz-box-sizing: $type;
+	-webkit-box-sizing: type;
+	box-sizing:$type;
+}
+
+@mixin scale-color-rgba-ie8($color, $lightness,$alpha:null){
+  	scale-color: $color, $lightness;
+}
+
 %clearfix {
     *zoom: 1;
 

@@ -13,11 +13,16 @@
 .introSmall {
     font-size: 18px;
     font-weight: 100;
-    color: #00AAAE;
+    color: $lightTerquoise;
     line-height: 1.2;
     margin: 20px 0;
 }
 
-.wrapBoxContent {
-    margin: 40px 0;
+/********** PREVENT PERMANENT HIGHLIGHT ON MOBILE **********/
+
+.cssCollapse-target,
+.cssCollapse-collapseIcons,
+.accordion-target,
+.accordion-icons {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

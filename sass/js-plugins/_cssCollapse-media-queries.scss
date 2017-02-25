@@ -1,0 +1,51 @@
+/***** MEDIA QUERIES FOR THE HIDDEN CONTENT *****/
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1900px;
+    }
+
+    .accordion-hiddenContent.is-open {
+        max-height: 1900px;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 568px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1100px;
+    }
+
+    .accordion-hiddenContent.is-open {
+        max-height: 1100px;
+    }
+}
+
+@media only screen and (min-width: 569px) and (max-width: 768px){
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 1000px;
+    }
+
+    .accordion-hiddenContent.is-open {
+        max-height: 1000px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 700px;
+    }
+
+    .accordion-hiddenContent.is-open {
+        max-height: 700px;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .cssCollapse-hiddenContent.is-open {
+        max-height: 500px;
+    }
+
+    .accordion-hiddenContent.is-open {
+        max-height: 500px;
+    }
+}

@@ -1,6 +1,3 @@
-// Vendors
-@import "vendor/reset.scss";
-
 // Typography
 @import "typography/colors";
 @import "typography/fonts";
@@ -10,6 +7,9 @@
 $font: $base-font-family;
 $font-size: base-font-size;
 $line-height: 1.2;
+
+// Vendors
+@import "vendor/reset.scss";
 
 // Mixins
 @import "modules/mixins";

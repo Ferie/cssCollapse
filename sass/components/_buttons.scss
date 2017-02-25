@@ -17,11 +17,11 @@
     -webkit-tap-highlight-color: $transparent;
 
     &:hover {
-        background-color: scale-color($terquoise, $lightness: 5%);
+        background-color: scale-color($orange, $lightness: 5%);
     }
 
     &:active {
-        background-color: scale-color($terquoise, $lightness: -5%);
+        background-color: scale-color($orange, $lightness: -5%);
     }
 }
 
