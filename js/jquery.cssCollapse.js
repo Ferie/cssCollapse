@@ -14,7 +14,7 @@
             iconClass: 'collapseIcons',
             iconOpen: 'icon-add',
             iconClose: 'icon-minus-fill',
-            behaviour: '',
+            behavior: '',
             speed: '',
             delay: '',
             accordionCloseLinkClass: 'closeAccordion',
@@ -102,24 +102,24 @@
         checkAccordion: function (event) {
             var pluginThis = event.data.pluginThis,
                 $currentTarget = $(this);
-            pluginThis.behaviour($currentTarget);
+            pluginThis.behavior($currentTarget);
             if (pluginThis.options.accordion == 'yes') {
                 pluginThis.accordionCollapse($currentTarget);
             } else {
                 pluginThis.toggleCollapse($currentTarget);
             }
         },
-        behaviour: function ($currentTarget) {
+        behavior: function ($currentTarget) {
             var pluginThis = this,
                 $hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
-            if (pluginThis.options.behaviour != '') {
+            if (pluginThis.options.behavior != '') {
                 $hiddenContent.css({
-                    '-webkit- transition-timing-function': pluginThis.options.behaviour,
-                    '-moz- transition-timing-function': pluginThis.options.behaviour,
-                    '-ms- transition-timing-function': pluginThis.options.behaviour,
-                    '-o- transition-timing-function': pluginThis.options.behaviour,
-                    'transition-timing-function': pluginThis.options.behaviour
+                    '-webkit- transition-timing-function': pluginThis.options.behavior,
+                    '-moz- transition-timing-function': pluginThis.options.behavior,
+                    '-ms- transition-timing-function': pluginThis.options.behavior,
+                    '-o- transition-timing-function': pluginThis.options.behavior,
+                    'transition-timing-function': pluginThis.options.behavior
                 });
             }
 
@@ -175,7 +175,7 @@
 
             if (!data) $.data(this, 'ObjPlugin_' + pluginName, (data = new plugin(this, options)));
             if (typeof option === 'string') data[option]();
-        })
+        });
     };
 
     $.fn[pluginName].defaults = defaults;
