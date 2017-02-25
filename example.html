@@ -260,17 +260,21 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.js"></script>
         <script type="text/javascript" src="js/jquery.cssCollapse.js"></script>
         <script type="text/javascript">
-            $('.example1 .cssCollapse-target').cssCollapse({
-                'behaviour': 'ease-in-out',
-                'speed': '800ms'
+            $('.example1').cssCollapse({
+                behaviour: 'ease-in-out',
+                speed: '800ms'
             });
 
-            $('.example3 .accordionContainer').cssCollapse({
-                'accordion': 'yes',
-                'prefix': 'accordion-',
+            $('.example2').cssCollapse();
+
+            $('.example3').cssCollapse({
+                accordion: 'yes',
+                prefix: 'accordion-',
                 iconClose: 'icon-arrow2-down',
                 iconOpen: 'icon-arrow2-up'
             });
+
+            $('.example4').cssCollapse();
         </script>
     </body>
 </html>
