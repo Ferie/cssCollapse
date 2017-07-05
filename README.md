@@ -3,6 +3,11 @@
 This plugin was developed to slide the content of a hidden box using the CSS3 transitions rules.
 
 
+## Examples
+
+See the [cssCollapse jQuery plugin](http://riccardoandreatta.com/web-app/cssCollapse/example.html) in actions!
+
+
 ## Options and parameters
 
 It works with the following parameters that can be overwritten if needed.
@@ -31,7 +36,7 @@ It can be applied also to the entire document if the same behavior is required f
 
 Use the plugin as shown in the examples below and in the ```example.html``` file.
 
-```
+```javascript
 $(document).cssCollapse({
     accordion: 'yes',
     targetClass: 'accordion-target',
@@ -45,7 +50,7 @@ Remember to structure the CSS as shown below. It is a plugin that is using the C
 
 In particular the classes that have to be present in the CSS are ```.hiddenContent```  and ```.hiddenContent.is-open```
 
-```
+```css
 .hiddenContent {
     overflow-y: hidden;
     padding: 0 20px;
@@ -69,18 +74,12 @@ In particular the classes that have to be present in the CSS are ```.hiddenConte
 The transition attributes can be omitted in the CSS and put in the plugin call as shown before. Remember that if they are present in both places the JS ones are the one that will be played.
 
 
-
-## Examples
-
-See the [cssCollapse jQuery plugin](http://riccardoandreatta.com/web-app/cssCollapse/example.html) in actions!!!
-
-
-
 ---
 
-#### IMPORTANT NOTES
+#### Known issues
 
 This plugin, obviously, does not show the transition animations for the hidden boxes on older browsers like Internet Explorer 7/8/9 because they do not support the CSS 3 transitions rules.
+
 The behavior on these browsers will be a simple hide/show of the hidden content.
 
-
+To fix this issue, you may try some Polyfill.
