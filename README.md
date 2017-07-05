@@ -1,4 +1,4 @@
-# cssCollapse a jQuery plugin that collapses elements using CSS3 transitions
+# cssCollapse is a jQuery plugin that collapses elements using CSS3 transitions
 
 [![Build Status](https://travis-ci.org/Ferie/cssCollapse.svg?branch=master)](https://travis-ci.org/Ferie/cssCollapse)
 
