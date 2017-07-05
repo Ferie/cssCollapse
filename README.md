@@ -1,4 +1,6 @@
-# cssCollapse a simple jQuery plugin that collapses elements of content using CSS3 transitions
+# cssCollapse a jQuery plugin that collapses elements using CSS3 transitions
+
+[![Build Status](https://travis-ci.org/Ferie/cssCollapse.svg?branch=master)](https://travis-ci.org/Ferie/cssCollapse)
 
 This plugin was developed to slide the content of a hidden box using the CSS3 transitions rules.
 
