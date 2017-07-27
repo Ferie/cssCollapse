@@ -9,7 +9,7 @@
         "collapse boxes",
         "accordion"
     ],
-    "version": "2.0",
+    "version": "3.0",
     "author": {
         "name": "Riccardo Andreatta",
         "url": "https://github.com/Ferie/cssCollapse"
@@ -20,7 +20,7 @@
             "url": "https://github.com/Ferie"
         }
     ],
-    "licenses": [
+    "license": [
         {
             "type": "GNU GENERAL PUBLIC LICENSE, version 2.0",
             "url": "http://opensource.org/licenses/GPL-2.0"
@@ -34,6 +34,7 @@
     "scripts": {
         "test": ""
     },
+    "lint": "node_modules/.bin/goodparts path/to/files/for/linting",
     "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.1",
