@@ -117,7 +117,6 @@
                 $hiddenContent.css({
                     '-webkit-transition-timing-function': pluginThis.options.behavior,
                     '-moz-transition-timing-function': pluginThis.options.behavior,
-                    '-ms-transition-timing-function': pluginThis.options.behavior,
                     '-o-transition-timing-function': pluginThis.options.behavior,
                     'transition-timing-function': pluginThis.options.behavior
                 });
@@ -127,7 +126,6 @@
                 $hiddenContent.css({
                     '-webkit-transition-duration': pluginThis.options.speed,
                     '-moz-transition-duration': pluginThis.options.speed,
-                    '-ms-transition-duration': pluginThis.options.speed,
                     '-o-transition-duration': pluginThis.options.speed,
                     'transition-duration': pluginThis.options.speed
                 });
@@ -137,7 +135,6 @@
                 $hiddenContent.css({
                     '-webkit-transition-delay': pluginThis.options.delay,
                     '-moz-transition-delay': pluginThis.options.delay,
-                    '-ms-transition-delay': pluginThis.options.delay,
                     '-o-transition-delay': pluginThis.options.delay,
                     'transition-delay': pluginThis.options.delay
                 });
