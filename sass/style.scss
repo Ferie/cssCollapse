@@ -1,18 +1,19 @@
-// Typography
-@import "typography/colors";
-@import "typography/fonts";
-@import "typography/icon-fonts";
-
-// Typography custom variables
-$font: $base-font-family;
-$font-size: base-font-size;
-$line-height: 1.2;
-
 // Vendors
 @import "vendor/reset.scss";
 
 // Mixins
 @import "modules/mixins";
+
+// Functions
+@import "modules/functions";
+
+// Extensions
+@import "modules/extensions";
+
+// Typography
+@import "typography/colors";
+@import "typography/fonts";
+@import "typography/icon-fonts";
 
 // JS Plugins Styles
 @import "js-plugins/cssCollapse";
@@ -25,9 +26,3 @@ $line-height: 1.2;
 // Components
 @import "components/buttons";
 @import "components/links";
-
-
-// Important Final Global Rules
-.hidden {
-    display: none;
-}

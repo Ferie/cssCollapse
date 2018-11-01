@@ -1,3 +1,9 @@
+// Typography custom variables
+$font: $base-font-family;
+$font-size: base-font-size;
+$line-height: 1.2;
+
+
 body {
     font-family: $font;
     font-size: $font-size;
@@ -7,18 +13,22 @@ body {
 
 .container {
     display: block;
-    margin: 20px auto;
-    max-width: 1024px;
+    margin: rem(20) auto;
+    max-width: rem(1024);
 }
 
 .wrapper {
-    margin: 0 16px;
+    margin: 0 rem(16);
+}
+
+.hidden {
+    display: none;
 }
 
 /********** CUSTOM CSS NEEDED ONLY FOR THE EXAMPLES **********/
 
 .wrapBoxContent {
-    margin: 40px 0;
+    margin: rem(40) 0;
 
     .button.inline {
         width: 40%;
@@ -31,15 +41,15 @@ body {
 
 .innerText {
     line-height: 1.2;
-    padding: 16px;
+    padding: rem(16);
 
     .linkTextHidden > & {
-        padding: 16px 0;
+        padding: rem(16) 0;
     }
 }
 
 .example1, .example2, .example3, .example4 {
-    padding: 32px 0;
+    padding: rem(32) 0;
 }
 
 .example2 {
@@ -54,7 +64,7 @@ body {
 
     .cssCollapse-text {
         display: table-cell;
-        padding-left: 6px;
+        padding-left: rem(6);
         vertical-align: inherit;
     }
 }

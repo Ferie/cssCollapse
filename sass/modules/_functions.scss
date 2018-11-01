@@ -1,0 +1,7 @@
+@function em($target, $context: $base-font) {
+    @return ($target / $context) * 1em;
+}
+
+@function rem($target, $context: $base-font) {
+    @return ($target / $context) * 1rem;
+}
