@@ -1,11 +1,33 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
+<!doctype html>
+<!--[if lte IE 8]>
+    <html class="lt-ie8">
+<![endif]-->
+<!--[if IE 8]>
+    <html class="ie8">
+<![endif]-->
+<!--[if IE 9]>
+    <html class="ie9">
+<![endif]-->
+<!--[if gt IE 9]>
+    <!-->
+<html lang="en">
+    <!--
+<![endif]-->
     <head>
-        <title>jQuery cssCollapse Plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>cssCollapse - A jQuery Plugin</title>
         <link rel="stylesheet" type="text/css" href="dist/css/app.css">
+        <link rel="icon" type="image/x-icon" href="https://www.riccardoandreatta.com/wp-content/Logo-RA.ico">
     </head>
 
     <body>
+        <!--[if lte IE 7]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+
         <div class="container">
             <div class="wrapper">
                 <div class="intro">
@@ -256,23 +278,27 @@
             </div>
         </div>
 
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="dist/js/app.min.js"></script>
-
         <script type="text/javascript">
+            // Example 1
             $('.example1').cssCollapse({
                 behavior: 'ease-in-out',
                 speed: '800ms'
             });
-
+            
+            // Example 2
             $('.example2').cssCollapse();
-
+            
+            // Example 3
             $('.example3').cssCollapse({
                 accordion: 'yes',
                 prefix: 'accordion-',
                 iconClose: 'cssCollapse-icon-arrow2-down',
                 iconOpen: 'cssCollapse-icon-arrow2-up'
             });
-
+            
+            // Example 4
             $('.example4').cssCollapse();
         </script>
     </body>
