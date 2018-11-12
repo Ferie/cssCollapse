@@ -20,7 +20,12 @@
                 delay: false,
             },
             accordionCloseLinkClass: 'closeAccordion',
-            noScrollClass: 'noScroll'
+            noScrollClass: 'noScroll',
+            changeText: {
+                changeTextClass: false,
+                open: '',
+                close: ''
+            }
         };
 
     //constructor
@@ -41,16 +46,18 @@
         toggleCollapse: function ($currentTarget) {
             var pluginThis = this,
                 $collapseIcons = $currentTarget.find('.' + pluginThis.options.prefix + pluginThis.options.iconClass),
-                $hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
+                $hiddenContent = $currentTarget.parent().find('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
             if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
                 $hiddenContent.removeClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconClose).addClass(pluginThis.options.prefix + pluginThis.options.iconOpen);
+                pluginThis.changeText($currentTarget);
                 pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.close');
             } else {
                 $hiddenContent.addClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconOpen).addClass(pluginThis.options.prefix + pluginThis.options.iconClose);
+                pluginThis.changeText($currentTarget);
                 pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.open');
             }
@@ -91,6 +98,16 @@
                     pluginThis.checkNoScrollClass($currentTarget);
                 });
                 $(document).trigger(pluginThis._name + '.accordionOpen');
+            }
+        },
+        changeText: function ($currentTarget) {
+            var pluginThis = this;
+            if ($currentTarget.hasClass(pluginThis.options.prefix + pluginThis.options.changeText.changeTextClass)) {
+                if ($currentTarget.text() === pluginThis.options.changeText.open) {
+                    $currentTarget.text(pluginThis.options.changeText.close);
+                } else {
+                    $currentTarget.text(pluginThis.options.changeText.open);
+                }
             }
         },
         checkNoScrollClass: function ($currentTarget) {

@@ -48,8 +48,28 @@ body {
     }
 }
 
-.example1, .example2, .example3, .example4 {
+.example1, .example2, .example3, .example4, .example5 {
     padding: rem(32) 0;
+}
+
+.example1 {
+    .wrapBoxContainer {
+        display: table;
+
+        > .wrapBoxContent {
+            display: table-cell;
+            padding: 0 rem(16);
+            width: 25%;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
 }
 
 .example2 {
@@ -66,5 +86,11 @@ body {
         display: table-cell;
         padding-left: rem(6);
         vertical-align: inherit;
+    }
+}
+
+.example4 {
+    .cssCollapse-collapseIcons {
+        float: left;
     }
 }

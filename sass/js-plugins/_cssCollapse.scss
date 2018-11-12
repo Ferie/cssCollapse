@@ -53,3 +53,19 @@
 .accordion-hiddenContent.is-open {
     @include transition(ease-in-out, 600ms, max-height);
 }
+
+/********** OPEN/CLOSE BOXES **********/
+
+.cssCollapse-box {
+    > .cssCollapse-target {
+        cursor: pointer;
+    }
+
+    &--show_close {
+        display: none;
+    }
+
+    &.cssCollapse-box--show_close {
+        display: none;
+    }
+}
