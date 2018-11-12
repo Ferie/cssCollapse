@@ -46,16 +46,12 @@
             if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
                 $hiddenContent.removeClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconClose).addClass(pluginThis.options.prefix + pluginThis.options.iconOpen);
-                if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                    $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                }
+                pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.close');
             } else {
                 $hiddenContent.addClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconOpen).addClass(pluginThis.options.prefix + pluginThis.options.iconClose);
-                if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                    $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                }
+                pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.open');
             }
         },
@@ -76,9 +72,7 @@
                 }
                 $currentTarget.removeClass(pluginThis.options.targetSelected);
                 $hiddenContent.one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend oTransitionEnd', function (e) {
-                    if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                        $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                    }
+                    pluginThis.checkNoScrollClass($currentTarget);
                 });
                 $(document).trigger(pluginThis._name + '.accordionClose');
             } else {
@@ -94,11 +88,15 @@
                     $collapseIcons.removeClass(pluginThis.options.iconClose).addClass(pluginThis.options.iconOpen);
                 }
                 $hiddenContent.one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend oTransitionEnd', function (e) {
-                    if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                        $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                    }
+                    pluginThis.checkNoScrollClass($currentTarget);
                 });
                 $(document).trigger(pluginThis._name + '.accordionOpen');
+            }
+        },
+        checkNoScrollClass: function ($currentTarget) {
+            var pluginThis = this;
+            if (!$currentTarget.hasClass(pluginThis.options.prefix + pluginThis.options.noScrollClass)) {
+                $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
             }
         },
         checkAccordion: function (event) {
@@ -154,9 +152,7 @@
             if (pluginThis.options.iconOpen != '') {
                 $collapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
             }
-            if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-            }
+            pluginThis.checkNoScrollClass($currentTarget);
             $(document).trigger(pluginThis._name + '.accordionClose');
         },
         eventBindings: function () {
