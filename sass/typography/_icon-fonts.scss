@@ -27,8 +27,8 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="csscollapse-"]:before,
-[class*=" csscollapse-"]:before {
+[class^="cssCollapse-"]:before,
+[class*=" cssCollapse-"]:before {
     font-family: "csscollapse-icon-font" !important;
     font-style: normal !important;
     font-weight: normal !important;
@@ -40,26 +40,26 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.csscollapse-chevron-down:before {
+.cssCollapse-chevron-down:before {
     content: "\61";
 }
 
-.csscollapse-chevron-up:before {
+.cssCollapse-chevron-up:before {
     content: "\62";
 }
 
-.csscollapse-plus:before {
+.cssCollapse-plus:before {
     content: "\63";
 }
 
-.csscollapse-dash:before {
+.cssCollapse-dash:before {
     content: "\64";
 }
 
-.csscollapse-diff-added:before {
+.cssCollapse-diff-added:before {
     content: "\65";
 }
 
-.csscollapse-diff-removed:before {
+.cssCollapse-diff-removed:before {
     content: "\66";
 }
