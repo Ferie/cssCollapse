@@ -115,28 +115,28 @@
 
             if (pluginThis.options.transition.behavior) {
                 $hiddenContent.css({
-                    '-webkit-transition-timing-function': pluginThis.options.behavior,
-                    '-moz-transition-timing-function': pluginThis.options.behavior,
-                    '-o-transition-timing-function': pluginThis.options.behavior,
-                    'transition-timing-function': pluginThis.options.behavior
+                    '-webkit-transition-timing-function': pluginThis.options.transition.behavior,
+                    '-moz-transition-timing-function': pluginThis.options.transition.behavior,
+                    '-o-transition-timing-function': pluginThis.options.transition.behavior,
+                    'transition-timing-function': pluginThis.options.transition.behavior
                 });
             }
 
             if (pluginThis.options.transition.duration) {
                 $hiddenContent.css({
-                    '-webkit-transition-duration': pluginThis.options.speed,
-                    '-moz-transition-duration': pluginThis.options.speed,
-                    '-o-transition-duration': pluginThis.options.speed,
-                    'transition-duration': pluginThis.options.speed
+                    '-webkit-transition-duration': pluginThis.options.transition.duration,
+                    '-moz-transition-duration': pluginThis.options.transition.duration,
+                    '-o-transition-duration': pluginThis.options.transition.duration,
+                    'transition-duration': pluginThis.options.transition.duration
                 });
             }
 
             if (pluginThis.options.transition.delay) {
                 $hiddenContent.css({
-                    '-webkit-transition-delay': pluginThis.options.delay,
-                    '-moz-transition-delay': pluginThis.options.delay,
-                    '-o-transition-delay': pluginThis.options.delay,
-                    'transition-delay': pluginThis.options.delay
+                    '-webkit-transition-delay': pluginThis.options.transition.delay,
+                    '-moz-transition-delay': pluginThis.options.transition.delay,
+                    '-o-transition-delay': pluginThis.options.transition.delay,
+                    'transition-delay': pluginThis.options.transition.delay
                 });
             }
         },
