@@ -4,7 +4,7 @@
 
     var pluginName = 'cssCollapse',
         defaults = {
-            accordion: 'no',
+            accordion: false,
             accordionContainer: 'accordionContainer',
             prefix: 'cssCollapse-',
             targetClass: 'target',
@@ -14,9 +14,11 @@
             iconClass: 'collapseIcons',
             iconOpen: 'diff-added',
             iconClose: 'diff-removed',
-            behavior: '',
-            speed: '',
-            delay: '',
+            transition: {
+                behavior: false,
+                duration: false,
+                delay: false,
+            },
             accordionCloseLinkClass: 'closeAccordion',
             noScrollClass: 'noScroll'
         };
@@ -103,7 +105,7 @@
             var pluginThis = event.data.pluginThis,
                 $currentTarget = $(this);
             pluginThis.behavior($currentTarget);
-            if (pluginThis.options.accordion == 'yes') {
+            if (pluginThis.options.accordion) {
                 pluginThis.accordionCollapse($currentTarget);
             } else {
                 pluginThis.toggleCollapse($currentTarget);
@@ -113,7 +115,7 @@
             var pluginThis = this,
                 $hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
-            if (pluginThis.options.behavior != '') {
+            if (pluginThis.options.transition.behavior) {
                 $hiddenContent.css({
                     '-webkit-transition-timing-function': pluginThis.options.behavior,
                     '-moz-transition-timing-function': pluginThis.options.behavior,
@@ -122,7 +124,7 @@
                 });
             }
 
-            if (pluginThis.options.speed != '') {
+            if (pluginThis.options.transition.duration) {
                 $hiddenContent.css({
                     '-webkit-transition-duration': pluginThis.options.speed,
                     '-moz-transition-duration': pluginThis.options.speed,
@@ -131,7 +133,7 @@
                 });
             }
 
-            if (pluginThis.options.delay != '') {
+            if (pluginThis.options.transition.delay) {
                 $hiddenContent.css({
                     '-webkit-transition-delay': pluginThis.options.delay,
                     '-moz-transition-delay': pluginThis.options.delay,
