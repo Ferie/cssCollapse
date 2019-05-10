@@ -2,50 +2,50 @@
 
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .cssCollapse-hiddenContent.is-open {
-        max-height: 1900px;
+        max-height: rem(1900);
     }
 
     .accordion-hiddenContent.is-open {
-        max-height: 1900px;
+        max-height: rem(1900);
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 568px) {
     .cssCollapse-hiddenContent.is-open {
-        max-height: 1100px;
+        max-height: rem(1100);
     }
 
     .accordion-hiddenContent.is-open {
-        max-height: 1100px;
+        max-height: rem(1100);
     }
 }
 
 @media only screen and (min-width: 569px) and (max-width: 768px){
     .cssCollapse-hiddenContent.is-open {
-        max-height: 1000px;
+        max-height: rem(1000);
     }
 
     .accordion-hiddenContent.is-open {
-        max-height: 1000px;
+        max-height: rem(1000);
     }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .cssCollapse-hiddenContent.is-open {
-        max-height: 700px;
+        max-height: rem(700);
     }
 
     .accordion-hiddenContent.is-open {
-        max-height: 700px;
+        max-height: rem(700);
     }
 }
 
 @media only screen and (min-width: 1025px) {
     .cssCollapse-hiddenContent.is-open {
-        max-height: 500px;
+        max-height: rem(500);
     }
 
     .accordion-hiddenContent.is-open {
-        max-height: 500px;
+        max-height: rem(500);
     }
 }

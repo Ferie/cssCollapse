@@ -4,7 +4,7 @@
 
     var pluginName = 'cssCollapse',
         defaults = {
-            accordion: 'no',
+            accordion: false,
             accordionContainer: 'accordionContainer',
             prefix: 'cssCollapse-',
             targetClass: 'target',
@@ -12,13 +12,20 @@
             hiddenContentClass: 'hiddenContent',
             collapseClass: 'is-open',
             iconClass: 'collapseIcons',
-            iconOpen: 'icon-add',
-            iconClose: 'icon-minus-fill',
-            behavior: '',
-            speed: '',
-            delay: '',
+            iconOpen: 'diff-added',
+            iconClose: 'diff-removed',
+            transition: {
+                behavior: false,
+                duration: false,
+                delay: false,
+            },
             accordionCloseLinkClass: 'closeAccordion',
-            noScrollClass: 'noScroll'
+            noScrollClass: 'noScroll',
+            changeText: {
+                changeTextClass: false,
+                open: '',
+                close: ''
+            }
         };
 
     //constructor
@@ -39,21 +46,19 @@
         toggleCollapse: function ($currentTarget) {
             var pluginThis = this,
                 $collapseIcons = $currentTarget.find('.' + pluginThis.options.prefix + pluginThis.options.iconClass),
-                $hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
+                $hiddenContent = $currentTarget.parent().find('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
             if ($hiddenContent.hasClass(pluginThis.options.collapseClass)) {
                 $hiddenContent.removeClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconClose).addClass(pluginThis.options.prefix + pluginThis.options.iconOpen);
-                if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                    $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                }
+                pluginThis.changeText($currentTarget);
+                pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.close');
             } else {
                 $hiddenContent.addClass(pluginThis.options.collapseClass);
                 $collapseIcons.removeClass(pluginThis.options.prefix + pluginThis.options.iconOpen).addClass(pluginThis.options.prefix + pluginThis.options.iconClose);
-                if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                    $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                }
+                pluginThis.changeText($currentTarget);
+                pluginThis.checkNoScrollClass($currentTarget);
                 $(document).trigger(pluginThis._name + '.open');
             }
         },
@@ -74,9 +79,7 @@
                 }
                 $currentTarget.removeClass(pluginThis.options.targetSelected);
                 $hiddenContent.one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend oTransitionEnd', function (e) {
-                    if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                        $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                    }
+                    pluginThis.checkNoScrollClass($currentTarget);
                 });
                 $(document).trigger(pluginThis._name + '.accordionClose');
             } else {
@@ -92,18 +95,32 @@
                     $collapseIcons.removeClass(pluginThis.options.iconClose).addClass(pluginThis.options.iconOpen);
                 }
                 $hiddenContent.one('webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend oTransitionEnd', function (e) {
-                    if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                        $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-                    }
+                    pluginThis.checkNoScrollClass($currentTarget);
                 });
                 $(document).trigger(pluginThis._name + '.accordionOpen');
+            }
+        },
+        changeText: function ($currentTarget) {
+            var pluginThis = this;
+            if ($currentTarget.hasClass(pluginThis.options.prefix + pluginThis.options.changeText.changeTextClass)) {
+                if ($currentTarget.text() === pluginThis.options.changeText.open) {
+                    $currentTarget.text(pluginThis.options.changeText.close);
+                } else {
+                    $currentTarget.text(pluginThis.options.changeText.open);
+                }
+            }
+        },
+        checkNoScrollClass: function ($currentTarget) {
+            var pluginThis = this;
+            if (!$currentTarget.hasClass(pluginThis.options.prefix + pluginThis.options.noScrollClass)) {
+                $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
             }
         },
         checkAccordion: function (event) {
             var pluginThis = event.data.pluginThis,
                 $currentTarget = $(this);
             pluginThis.behavior($currentTarget);
-            if (pluginThis.options.accordion == 'yes') {
+            if (pluginThis.options.accordion) {
                 pluginThis.accordionCollapse($currentTarget);
             } else {
                 pluginThis.toggleCollapse($currentTarget);
@@ -113,33 +130,30 @@
             var pluginThis = this,
                 $hiddenContent = $currentTarget.siblings('.' + pluginThis.options.prefix + pluginThis.options.hiddenContentClass);
 
-            if (pluginThis.options.behavior != '') {
+            if (pluginThis.options.transition.behavior) {
                 $hiddenContent.css({
-                    '-webkit-transition-timing-function': pluginThis.options.behavior,
-                    '-moz-transition-timing-function': pluginThis.options.behavior,
-                    '-ms-transition-timing-function': pluginThis.options.behavior,
-                    '-o-transition-timing-function': pluginThis.options.behavior,
-                    'transition-timing-function': pluginThis.options.behavior
+                    '-webkit-transition-timing-function': pluginThis.options.transition.behavior,
+                    '-moz-transition-timing-function': pluginThis.options.transition.behavior,
+                    '-o-transition-timing-function': pluginThis.options.transition.behavior,
+                    'transition-timing-function': pluginThis.options.transition.behavior
                 });
             }
 
-            if (pluginThis.options.speed != '') {
+            if (pluginThis.options.transition.duration) {
                 $hiddenContent.css({
-                    '-webkit-transition-duration': pluginThis.options.speed,
-                    '-moz-transition-duration': pluginThis.options.speed,
-                    '-ms-transition-duration': pluginThis.options.speed,
-                    '-o-transition-duration': pluginThis.options.speed,
-                    'transition-duration': pluginThis.options.speed
+                    '-webkit-transition-duration': pluginThis.options.transition.duration,
+                    '-moz-transition-duration': pluginThis.options.transition.duration,
+                    '-o-transition-duration': pluginThis.options.transition.duration,
+                    'transition-duration': pluginThis.options.transition.duration
                 });
             }
 
-            if (pluginThis.options.delay != '') {
+            if (pluginThis.options.transition.delay) {
                 $hiddenContent.css({
-                    '-webkit-transition-delay': pluginThis.options.delay,
-                    '-moz-transition-delay': pluginThis.options.delay,
-                    '-ms-transition-delay': pluginThis.options.delay,
-                    '-o-transition-delay': pluginThis.options.delay,
-                    'transition-delay': pluginThis.options.delay
+                    '-webkit-transition-delay': pluginThis.options.transition.delay,
+                    '-moz-transition-delay': pluginThis.options.transition.delay,
+                    '-o-transition-delay': pluginThis.options.transition.delay,
+                    'transition-delay': pluginThis.options.transition.delay
                 });
             }
         },
@@ -155,9 +169,7 @@
             if (pluginThis.options.iconOpen != '') {
                 $collapseIcons.removeClass(pluginThis.options.iconOpen).addClass(pluginThis.options.iconClose);
             }
-            if (!$currentTarget.hasClass(pluginThis.options.noScrollClass)) {
-                $('html, body').animate({scrollTop: $($currentTarget).offset().top}, 800);
-            }
+            pluginThis.checkNoScrollClass($currentTarget);
             $(document).trigger(pluginThis._name + '.accordionClose');
         },
         eventBindings: function () {

@@ -4,13 +4,13 @@
     @include transition(ease, 500ms, background-color);
     display: block;
     background-color: $orange;
-    border: 1px solid $orange;
+    border: rem(1) solid $orange;
     border: 0;
     font-size: em(16);
     color: $white;
     cursor: pointer;
     outline: none;
-    padding: em(16);
+    padding: rem(16);
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
@@ -32,6 +32,6 @@
 
 .button.inline {
     display: inline-block;
-    padding: 16px 32px;
+    padding: rem(16) rem(32);
     width: 45%;
 }

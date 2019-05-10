@@ -3,17 +3,17 @@
 }
 
 .intro {
-    font-size: 22px;
+    font-size: em(22);
     font-weight: 300;
     line-height: 1.4;
-    margin: 20px 0;
+    margin: rem(20) 0;
     text-transform: uppercase;
 }
 
 .introSmall {
-    font-size: 18px;
+    font-size: rem(18);
     font-weight: 100;
     color: $lightTerquoise;
     line-height: 1.2;
-    margin: 20px 0;
+    margin: rem(20) 0;
 }

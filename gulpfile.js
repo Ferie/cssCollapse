@@ -6,8 +6,6 @@ var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    uglifyjs = require('uglify-js'),
-//    rename = require('gulp-rename'),
     sourcemaps = require('gulp-sourcemaps'),
     pathSass = 'sass/',
     pathJs = 'js/',
@@ -26,12 +24,11 @@ gulp.task('clean', function() {
 // Compile Sass
 gulp.task('sass', function() {
     console.log('[' + (new Date).toLocaleTimeString() + '] Compiling SASS');
-//    console.log((new Date).toUTCString() + ' Compiling SASS');
     return gulp.src(pathSass + '*.scss')
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(sass())
             .pipe(concat(distCssFile))
-        .pipe(sourcemaps.write()) // Add the map to modified source
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(distCssPath));
 });
 
@@ -49,11 +46,9 @@ gulp.task('scripts', ['lint'], function() {
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(concat(distJsFile))
             .pipe(gulp.dest(distJsPath))
-//            .pipe(rename(distJsFile))
-//             only uglify if gulp is ran with '--type production'
+            // only uglify if gulp is ran with '--type production'
             .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
-//            .pipe(uglify())
-        .pipe(sourcemaps.write()) // Add the map to modified source
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(distJsPath));
 });
 
@@ -72,5 +67,4 @@ gulp.task('default', ['clean'], function() {
     console.log('| Gulp is now building... |');
     console.log('===========================');
     gulp.start('sass', 'scripts');
-//    return gutil.log('Gulp is running the default task')
 });
