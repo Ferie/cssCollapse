@@ -6,8 +6,12 @@ var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    pathSass = 'sass/',
+    sourcemaps = require('gulp-sourcemaps');
+
+/************************\
+|*  GULP CONFIGRATIONS  *|
+\************************/
+var pathSass = 'sass/',
     pathJs = 'js/',
 	jsLibs = 'js/libs/',
     distCssPath = 'dist/css/',
