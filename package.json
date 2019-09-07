@@ -9,17 +9,11 @@
         "collapse boxes",
         "accordion"
     ],
-    "version": "3.2",
+    "version": "3.2.0",
     "author": {
         "name": "Riccardo Andreatta",
         "url": "https://github.com/Ferie/cssCollapse"
     },
-    "maintainers": [
-        {
-            "name": "Riccardo Andreatta",
-            "url": "https://github.com/Ferie"
-        }
-    ],
     "license-url": "http://opensource.org/licenses/GPL-2.0",
     "bugs": "https://github.com/Ferie/cssCollapse/issues",
     "homepage": "http://riccardoandreatta.com/web-app/cssCollapse/example.html",
