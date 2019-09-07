@@ -1,5 +1,6 @@
 # cssCollapse is a jQuery plugin that collapses elements using CSS3 transitions
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/68db4347-bc46-4c24-813f-6e33d3888f6a/deploy-status)](https://app.netlify.com/sites/css-collapse/deploys)
 [![Build Status](https://travis-ci.org/Ferie/cssCollapse.svg?branch=master)](https://travis-ci.org/Ferie/cssCollapse)
 [![github tag](https://img.shields.io/github/tag/Ferie/cssCollapse.svg)](https://github.com/Ferie/cssCollapse/tags)
 
