@@ -12,15 +12,15 @@ var gulp = require('gulp'),
 /************************\
 |*  GULP CONFIGRATIONS  *|
 \************************/
-var pathSass = 'sass/',
-    pathJs = 'js/',
-	jsLibs = 'js/libs/',
-    distCssPath = 'dist/css/',
-    distCssFile = 'app.css',
-    distJsPath = 'dist/js/',
-    distJsFile = 'app.min.js';
+var pathSass = 'src/sass/',
+    pathJs = 'src/js/',
+    jsLibs = 'src/js',
+    distCssPath = 'css/',
+    distCssFile = 'examples.min.css',
+    distJsPath = 'js/',
+    distJsFile = 'examples.min.js';
 
-// Remove all file in distribution folder
+// Remove all file in release folders
 gulp.task('clean', function() {
     console.log('[' + (new Date).toLocaleTimeString() + '] Deleting files inside folders:\n', distCssPath, '\n', distJsPath);
     return del([distCssPath, distJsPath]);
