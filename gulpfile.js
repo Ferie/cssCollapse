@@ -6,20 +6,21 @@ var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    uglifycss = require('gulp-uglifycss'),
     sourcemaps = require('gulp-sourcemaps');
 
 /************************\
 |*  GULP CONFIGRATIONS  *|
 \************************/
-var pathSass = 'sass/',
-    pathJs = 'js/',
-	jsLibs = 'js/libs/',
-    distCssPath = 'dist/css/',
-    distCssFile = 'app.css',
-    distJsPath = 'dist/js/',
-    distJsFile = 'app.min.js';
+var pathSass = 'src/sass/',
+    pathJs = 'src/js/',
+    jsLibs = 'src/js',
+    distCssPath = 'css/',
+    distCssFile = 'examples.min.css',
+    distJsPath = 'js/',
+    distJsFile = 'examples.min.js';
 
-// Remove all file in distribution folder
+// Remove all file in release folders
 gulp.task('clean', function() {
     console.log('[' + (new Date).toLocaleTimeString() + '] Deleting files inside folders:\n', distCssPath, '\n', distJsPath);
     return del([distCssPath, distJsPath]);
@@ -32,6 +33,8 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(sass())
             .pipe(concat(distCssFile))
+            // only uglify if gulp is ran with '--type production'
+            .pipe(gutil.env.type === 'production' ? uglifycss() : gutil.noop())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(distCssPath));
 });
