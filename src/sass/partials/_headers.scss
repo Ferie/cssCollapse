@@ -1,6 +1,6 @@
 .heading1 {
     display: block;
-    font-family: "Roboto", "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: $base-font-family;
     font-size: em(32);
     font-weight: 300;
     color: $lighterBlack;
@@ -9,7 +9,7 @@
 }
 
 .intro, .introSmall {
-    font-family: 'Roboto', 'Helvetica Neue', 'Helvetica', sans-serif;
+    font-family: $base-font-family;
 }
 
 .intro {
