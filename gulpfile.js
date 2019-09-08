@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    uglifycss = require('gulp-uglifycss'),
     sourcemaps = require('gulp-sourcemaps');
 
 /************************\
@@ -32,6 +33,8 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(sass())
             .pipe(concat(distCssFile))
+            // only uglify if gulp is ran with '--type production'
+            .pipe(gutil.env.type === 'production' ? uglifycss() : gutil.noop())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(distCssPath));
 });
