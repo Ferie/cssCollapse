@@ -25,7 +25,8 @@
     },
     "scripts": {
         "build": "gulp",
-        "serve": "node server"
+        "serve": "node server",
+        "start": "node server.js"
     },
     "devDependencies": {
         "body-parser": "^1.17.1",
