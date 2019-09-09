@@ -4,12 +4,14 @@
 [![Build Status](https://travis-ci.org/Ferie/cssCollapse.svg?branch=master)](https://travis-ci.org/Ferie/cssCollapse)
 [![github tag](https://img.shields.io/github/tag/Ferie/cssCollapse.svg)](https://github.com/Ferie/cssCollapse/tags)
 
+Are you still using jQuery? Would you like a nice CSS transition managed with jQuery? If the answer is "Yes" this is the right place for you.
+
 This plugin was developed to slide the content of a hidden box using the CSS3 transitions rules.
 
 
 ## Examples
 
-See the [cssCollapse jQuery plugin](http://riccardoandreatta.com/web-app/cssCollapse/example.html) in actions!
+See the [cssCollapse jQuery plugin](https://jquery-css-collapse.netlify.com/) in action!
 
 
 ## Options and parameters
@@ -34,14 +36,16 @@ It works with the following parameters that can be overwritten if needed.
 
 ## Usage
 
-Apply the plugin to a single selector that have to contain the target and the hidden content to make it work independently one to the other in the same page.
+Get a copy of the plugin from the `dist` folder and add it to your project.
+
+Apply the plugin to a DOM element that have to contain the target (the element that if it is clicked, collapse another element) and the hidden content (the element that is shown/hidden when the target is clicked) to make it work independently one to the other in the same page.
 
 It can be applied also to the entire document if the same behavior is required for all the components inside the page.
 
-Use the plugin as shown in the examples below and in the `example.html` file.
+Use the plugin as shown in the examples below and/or in the [`example.js`](https://github.com/Ferie/cssCollapse/blob/master/src/js/examples.js) file.
 
 ```javascript
-$(document).cssCollapse({
+$('.box').cssCollapse({
     accordion: true,
     targetClass: 'accordion-target',
     hiddenContentClass: 'accordion-hiddenContent',
@@ -50,9 +54,18 @@ $(document).cssCollapse({
 });
 ```
 
-Remember to structure the CSS as shown below. It is a plugin that is using the CSS3 transitions, so some rules are needed.
+In the page you can use the following classes: 
+- `.hiddenContent` (if you want your content to be hidden when the page loads)
 
-In particular the classes that have to be present in the CSS are `.hiddenContent`  and `.hiddenContent.is-open`
+and/or
+- `.hiddenContent.is-open` (if you want your content to be shown when the page loads).
+
+
+### Styles
+
+Use the CSS provided in the `dist` folder or structure it as shown below.
+
+In the following example the CSS3 transitions will be then overwritten from the ones in the plugin, if specified.
 
 ```css
 .hiddenContent {
@@ -73,15 +86,10 @@ In particular the classes that have to be present in the CSS are `.hiddenContent
 }
 ```
 
-The transition attributes can be omitted in the CSS and put in the plugin call as shown before. Remember that if they are present in both places the JS ones are the one that will be played.
-
-
 ---
 
-#### Known issues
+#### Known issue
 
-This plugin, obviously, does not show the transition animations for the hidden boxes on older browsers like Internet Explorer 7/8/9 because they do not support the CSS 3 transitions rules.
+This plugin, obviously, does not show the transitions on older browsers like Internet Explorer 9 and below, because they do not support CSS3 transitions.
 
 The behavior on these browsers will be a simple hide/show of the hidden content.
-
-To fix this issue, you may try some Polyfill.
