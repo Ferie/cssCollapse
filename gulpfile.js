@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 \************************/
 var pathSass = 'src/sass/',
     pathJs = 'src/js/',
-    jsLibs = 'src/js',
+    jsLibs = 'src/js/',
     distCssPath = 'assets/css/',
     distCssFile = 'examples.min.css',
     distJsPath = 'assets/js/',
