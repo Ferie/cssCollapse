@@ -1,0 +1,71 @@
+@import "cssCollapse-media-queries";
+
+/********** PREVENT PERMANENT HIGHLIGHT **********/
+
+.cssCollapse-target,
+.cssCollapse-collapseIcons,
+.accordion-target,
+.accordion-collapseIcons {
+    -webkit-tap-highlight-color: $transparent;
+}
+
+/********** CSS COLLAPSE **********/
+
+.cssCollapse-hiddenContent {
+    @include transition(cubic-bezier(.08, .99, .46, .73), 400ms, max-height);
+    overflow-y: hidden;
+    max-height: 0;
+
+    &.is-open {
+        @include transition(cubic-bezier(.08, .99, .46, .73), 600ms, max-height);
+    }
+}
+
+/********** ACCORDION **********/
+
+.accordionContainer {
+    border: rem(1) solid $greyDdd;
+}
+
+.accordionContent {
+    border-top: rem(1) solid $greyDdd;
+
+    &:first-child {
+        border: none;
+    }
+}
+
+.accordion-target {
+    padding: rem(10) rem(20);
+}
+
+.accordion-collapseIcons {
+    float: right;
+}
+
+.accordion-hiddenContent {
+    @include transition(ease-in-out, 600ms, max-height);
+    overflow-y: hidden;
+    padding: 0 rem(20);
+    max-height: 0;
+}
+
+.accordion-hiddenContent.is-open {
+    @include transition(ease-in-out, 600ms, max-height);
+}
+
+/********** OPEN/CLOSE BOXES **********/
+
+.cssCollapse-box {
+    > .cssCollapse-target {
+        cursor: pointer;
+    }
+
+    &--show_close {
+        display: none;
+    }
+
+    &.cssCollapse-box--show_close {
+        display: none;
+    }
+}

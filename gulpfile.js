@@ -6,18 +6,21 @@ var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
-    uglifyjs = require('uglify-js'),
-//    rename = require('gulp-rename'),
-    sourcemaps = require('gulp-sourcemaps'),
-    pathSass = 'sass/',
-    pathJs = 'js/',
-	jsLibs = 'js/libs/',
-    distCssPath = 'dist/css/',
-    distCssFile = 'app.css',
-    distJsPath = 'dist/js/',
-    distJsFile = 'app.min.js';
+    uglifycss = require('gulp-uglifycss'),
+    sourcemaps = require('gulp-sourcemaps');
 
-// Remove all file in distribution folder
+/************************\
+|*  GULP CONFIGRATIONS  *|
+\************************/
+var pathSass = 'src/sass/',
+    pathJs = 'src/js/',
+    jsLibs = 'src/js/',
+    distCssPath = 'assets/css/',
+    distCssFile = 'examples.min.css',
+    distJsPath = 'assets/js/',
+    distJsFile = 'examples.min.js';
+
+// Remove all file in release folders
 gulp.task('clean', function() {
     console.log('[' + (new Date).toLocaleTimeString() + '] Deleting files inside folders:\n', distCssPath, '\n', distJsPath);
     return del([distCssPath, distJsPath]);
@@ -26,12 +29,13 @@ gulp.task('clean', function() {
 // Compile Sass
 gulp.task('sass', function() {
     console.log('[' + (new Date).toLocaleTimeString() + '] Compiling SASS');
-//    console.log((new Date).toUTCString() + ' Compiling SASS');
     return gulp.src(pathSass + '*.scss')
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(sass())
             .pipe(concat(distCssFile))
-        .pipe(sourcemaps.write()) // Add the map to modified source
+            // only uglify if gulp is ran with '--type production'
+            .pipe(gutil.env.type === 'production' ? uglifycss() : gutil.noop())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(distCssPath));
 });
 
@@ -49,11 +53,9 @@ gulp.task('scripts', ['lint'], function() {
         .pipe(sourcemaps.init()) // Process the original sources
             .pipe(concat(distJsFile))
             .pipe(gulp.dest(distJsPath))
-//            .pipe(rename(distJsFile))
-//             only uglify if gulp is ran with '--type production'
+            // only uglify if gulp is ran with '--type production'
             .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop()) 
-//            .pipe(uglify())
-        .pipe(sourcemaps.write()) // Add the map to modified source
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(distJsPath));
 });
 
@@ -72,5 +74,4 @@ gulp.task('default', ['clean'], function() {
     console.log('| Gulp is now building... |');
     console.log('===========================');
     gulp.start('sass', 'scripts');
-//    return gutil.log('Gulp is running the default task')
 });

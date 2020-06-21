@@ -1,0 +1,96 @@
+// Typography custom variables
+$font: $base-font-family;
+$font-size: $base-font-size;
+$line-height: 1.2;
+
+
+body {
+    font-family: $font;
+    font-size: $font-size;
+    color: $lighterBlack;
+    line-height: $line-height;
+}
+
+.container {
+    display: block;
+    margin: rem(20) auto;
+    max-width: rem(1024);
+}
+
+.wrapper {
+    margin: 0 rem(16);
+}
+
+.hidden {
+    display: none;
+}
+
+/********** CUSTOM CSS NEEDED ONLY FOR THE EXAMPLES **********/
+
+.wrapBoxContent {
+    margin: rem(40) 0;
+
+    .button.inline {
+        width: 40%;
+    }
+}
+
+.boxHidden {
+    background-color: $lightOrange;
+}
+
+.innerText {
+    line-height: 1.2;
+    padding: rem(16);
+
+    .linkTextHidden > & {
+        padding: rem(16) 0;
+    }
+}
+
+.example1, .example2, .example3, .example4, .example5 {
+    padding: rem(32) 0;
+}
+
+.example1 {
+    .wrapBoxContainer {
+        display: table;
+
+        > .wrapBoxContent {
+            display: table-cell;
+            padding: 0 rem(16);
+            width: 25%;
+
+            &:first-child {
+                padding-left: 0;
+            }
+
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+.example2 {
+    .cssCollapse-target {
+        display: table;
+    }
+
+    .cssCollapse-collapseIcons {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    .cssCollapse-text {
+        display: table-cell;
+        padding-left: rem(6);
+        vertical-align: inherit;
+    }
+}
+
+.example4 {
+    .cssCollapse-collapseIcons {
+        float: left;
+    }
+}

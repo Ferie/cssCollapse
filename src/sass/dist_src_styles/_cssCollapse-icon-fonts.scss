@@ -1,0 +1,64 @@
+/********** ICON FONTS **********/
+
+@charset "UTF-8";
+
+@font-face {
+    font-family: "csscollapse-icon-font";
+    src: url("csscollapse-icon-font.woff") format("woff"),
+        url("csscollapse-icon-font.ttf") format("truetype"),
+        url("csscollapse-icon-font.svg#csscollapse-icon-font") format("svg"),
+        url("csscollapse-icon-font.eot?#iefix") format("embedded-opentype");
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+[data-icon]:before {
+    font-family: "csscollapse-icon-font" !important;
+    content: attr(data-icon);
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="cssCollapse-"]:before,
+[class*=" cssCollapse-"]:before {
+    font-family: "csscollapse-icon-font" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.cssCollapse-chevron-down:before {
+    content: "\61";
+}
+
+.cssCollapse-chevron-up:before {
+    content: "\62";
+}
+
+.cssCollapse-plus:before {
+    content: "\63";
+}
+
+.cssCollapse-dash:before {
+    content: "\64";
+}
+
+.cssCollapse-diff-added:before {
+    content: "\65";
+}
+
+.cssCollapse-diff-removed:before {
+    content: "\66";
+}

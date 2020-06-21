@@ -1,0 +1,19 @@
+.intro, .introSmall {
+    font-family: $base-font-family;
+}
+
+.intro {
+    font-size: em(22);
+    font-weight: 300;
+    line-height: 1.4;
+    margin: rem(20) 0;
+    text-transform: uppercase;
+}
+
+.introSmall {
+    font-size: rem(18);
+    font-weight: 100;
+    color: $lightTerquoise;
+    line-height: 1.2;
+    margin: rem(20) 0;
+}

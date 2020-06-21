@@ -1,0 +1,21 @@
+.heading1 {
+    display: block;
+    font-family: $base-font-family;
+    font-size: em(32);
+    font-weight: 300;
+    color: $lighterBlack;
+    line-height: 1.3;
+    margin: rem(16) 0;
+}
+
+.intro, .introSmall {
+    font-family: $base-font-family;
+}
+
+.intro {
+    font-size: em(22);
+    font-weight: 300;
+    line-height: 1.4;
+    margin: rem(20) 0;
+    text-transform: uppercase;
+}

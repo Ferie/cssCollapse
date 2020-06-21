@@ -1,0 +1,28 @@
+// Vendors
+@import "vendor/reset.scss";
+
+// Mixins
+@import "modules/mixins";
+
+// Functions
+@import "modules/functions";
+
+// Extensions
+@import "modules/extensions";
+
+// Typography
+@import "typography/colors";
+@import "typography/fonts";
+@import "typography/icon-fonts";
+
+// JS Plugins Styles
+@import "js-plugins/cssCollapse";
+
+// Page setting
+@import "partials/body-settings";
+@import "partials/headers";
+@import "partials/globals";
+
+// Components
+@import "components/buttons";
+@import "components/links";

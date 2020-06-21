@@ -1,0 +1,9 @@
+// Transitions
+// --------------------------------------------------
+
+@mixin transition($transition-property: all, $transition-time: 0.5s, $method: ease) {
+    -webkit-transition: $transition-property $transition-time $method; /* Chrome 4-25, Safari 3.1-6, iOS 3.2-6.1, Android 2.1-4.3, BlackBerry 7 */
+    -moz-transition: $transition-property $transition-time $method; /* FireFox 4-15 */
+    -o-transition: $transition-property $transition-time $method;/* Opera    10.5-11.5 */
+    transition: $transition-property $transition-time $method; /* W3C - Chrome 26+, Safari 6.1+, FF 16+, IE 10+, Opera 12.1+, iOS 7+, Android 4.4+, BlackBerry 10+ */
+}
