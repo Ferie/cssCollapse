@@ -28,10 +28,14 @@
         "serve": "node server",
         "start": "node server.js"
     },
-    "devDependencies": {
+    "dependencies": {
+        "classlist.js": "^1.1.20150312",
         "body-parser": "^1.17.1",
+        "del": "^2.2.2",
         "dotenv": "^4.0.0",
-        "express": "^4.15.2",
+        "express": "^4.15.2"
+    },
+    "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-concat": "^2.6.1",
         "gulp-jshint": "^2.0.4",
@@ -43,9 +47,5 @@
         "jshint": "^2.10.2",
         "jshint-stylish": "^2.2.1",
         "uglify-js": "^3.6.0"
-    },
-    "dependencies": {
-        "classlist.js": "^1.1.20150312",
-        "del": "^2.2.2"
     }
 }
