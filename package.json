@@ -29,23 +29,23 @@
         "start": "node server.js"
     },
     "dependencies": {
-        "classlist.js": "^1.1.20150312",
-        "body-parser": "^1.17.1",
-        "del": "^2.2.2",
-        "dotenv": "^4.0.0",
-        "express": "^4.15.2"
+        "classlist.js": "1.1.20150312",
+        "body-parser": "1.19.0",
+        "del": "2.2.2",
+        "dotenv": "4.0.0",
+        "express": "4.17.1"
     },
     "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-concat": "^2.6.1",
-        "gulp-jshint": "^2.0.4",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^3.1.0",
-        "gulp-sourcemaps": "^2.4.1",
-        "gulp-uglify": "^2.0.1",
-        "gulp-uglifycss": "^1.1.0",
-        "jshint": "^2.10.2",
-        "jshint-stylish": "^2.2.1",
-        "uglify-js": "^3.6.0"
+        "gulp": "3.9.1",
+        "gulp-concat": "2.6.1",
+        "gulp-jshint": "2.1.0",
+        "gulp-rename": "1.4.0",
+        "gulp-sass": "3.2.1",
+        "gulp-sourcemaps": "2.6.5",
+        "gulp-uglify": "2.1.2",
+        "gulp-uglifycss": "1.1.0",
+        "jshint": "2.12.0",
+        "jshint-stylish": "2.2.1",
+        "uglify-js": "3.10.2"
     }
 }
